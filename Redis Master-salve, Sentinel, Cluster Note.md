@@ -37,7 +37,7 @@ AOF 持續記錄伺服器收到的每個寫操作，這些操作將在伺服器�
 
 如果複製 ID 無法一致，或節點缺失了偏移量：
 
-- 從節點申請完全同步
+- 從節點申請完全同步ㄅ
 - 主節點生成新的 RDB 快照，並傳輸給從節點
 - 主節點將生成快照的這段時間，額外的命令同步給從節點
 
@@ -209,5 +209,10 @@ Redis Cluster 有兩個判斷節點的狀態
 ### 缺點
 - 每一個主節點需要有副本節點防備，否則將會導致一部分資料無法取用也無法寫入
 - 資料沒有強一致性，雖然 Redis Cluster 在 CAP 理論中，應是選擇 A 與 P 
+
+本文參考官方文件
+https://redis.io/docs/latest/operate/oss_and_stack/reference/cluster-spec/
+https://redis.io/docs/latest/operate/oss_and_stack/management/sentinel/
+
 
 
